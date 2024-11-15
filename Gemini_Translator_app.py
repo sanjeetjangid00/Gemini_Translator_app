@@ -35,8 +35,14 @@ if lang != "" and text != "":
         chatbot = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
         
         # Define the message template
+        template = """Translate the following into {language} 
+        and translated language should be in {language} and 
+        Romanized Pronunciation both also. 
+        both sholuld in a single line for example 'எப்படி இருக்கீங்க? (eppati irukkiṅka?)') and 
+        don't explain. if {language} is not a correct language or language code then give an error 'Warning: 
+        Please Type Correct Language to Translate' :"""
         messages = ChatPromptTemplate.from_messages([
-    ("system","Translate the following into {language} and translated language should be in {language} and Romanized Pronunciation both also. both sholuld in a single line for example 'எப்படி இருக்கீங்க? (eppati irukkiṅka?)') and don't explain:"),
+    ("system",template),
     ("user","{text}")
 ])
         
@@ -48,8 +54,10 @@ if lang != "" and text != "":
         
         # Invoke the chain with user inputs
         response = chains.invoke({"language": lang, "text": text})
-        
-        # Display the result
-        st.write("**Translation:**", response)
+        if "Warning" not in response:
+            # Display the result
+            st.write("**Translation:**", response)
+        else:
+            st.warning("Please Type Correct Language to Translate")
 else:
     st.warning("Please enter both language code and text.")
