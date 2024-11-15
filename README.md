@@ -19,7 +19,7 @@ API keys for LangChain and Google Generative AI
 
 bash
 Copy code
-git clone https://github.com/yourusername/gemini-translator.git
+git clone https://github.com/sanjeetjangid00/Gemini_Translator_app
 cd gemini-translator
 #### 2. Install Dependencies:
 
