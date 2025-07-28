@@ -1,4 +1,7 @@
 # 🌐 Gemini Translator - AI-Powered Language Translation App
+
+![Gemini_Translation](https://github.com/user-attachments/assets/c588d640-d67a-49e6-81b3-a05c6306137d)
+
 Gemini Translator is an AI-powered language translation app built using Streamlit and LangChain. It leverages Google's Generative AI (Gemini model) to translate text into various languages, providing both the translated text and its Romanized pronunciation in a single line. This makes it a perfect tool for users who want to quickly understand and pronounce phrases in different languages.
 
 ### 🛠️ Features
